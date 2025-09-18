@@ -1,3 +1,42 @@
+
+let minutes = 0; 
+let seconds = 5; 
+let text = document.querySelector(".text");
+let main = document.querySelector(".main");
+let blast = document.querySelector(".main1");
+  // if (seconds != 0 && minutes != 0) {
+  blast.style.display = "none" 
+  // }
+  setInterval(() => {
+    if (seconds === 0 && minutes > 0) {
+    minutes--;
+    seconds = 60;
+  } 
+  if (seconds > 0) {
+    seconds--;
+  }
+    text.textContent = `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+
+  if (seconds == 0 && minutes == 0) {
+    // end
+    blast.style.display = "flex" 
+    main.style.display = "none"
+    SakalakaBumBumInsible();
+  }
+
+}, 1000);
+
+function SakalakaBumBumInsible() {
+  setTimeout(() => {
+  blast.style.display = "none" 
+}, 2000);
+
+}
+
+
+
+
+
 // let seconds = 10;
 // const timerEl = document.getElementById('timer');
 
@@ -35,28 +74,3 @@
 //         }
 //       }, 1000);
 //     }
-
-let minutes = 30; 
-let seconds = 0; 
-let text = document.querySelector(".text");
-let main = document.querySelector(".main");
-let blast = document.querySelector(".main1");
-  // if (seconds != 0 && minutes != 0) {
-  blast.style.display = "none" 
-  // }
-  setInterval(() => {
-    if (seconds === 0 && minutes > 0) {
-    minutes--;
-    seconds = 60;
-  } 
-  if (seconds > 0) {
-    seconds--;
-  }
-    text.textContent = `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-
-  if (seconds == 0 && minutes == 0) {
-    // end
-    blast.style.display = "flex" 
-    main.style.display = "none"
-  }
-}, 1000);
